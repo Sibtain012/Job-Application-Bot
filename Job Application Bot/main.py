@@ -1,4 +1,5 @@
-import time
+import time, os
+from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import (
@@ -7,9 +8,11 @@ from selenium.common.exceptions import (
 )
 
 # === CONFIGURATION ===
-EMAIL = "sibtainahmed410@gmail.com"
-PASSWORD = "Sibtain@21"
-PHONE = "03053566622"
+load_dotenv()
+
+EMAIL = os.getenv("EMAIL")
+PASSWORD = os.getenv("PASSWORD")
+PHONE = os.getenv("PHONE")
 LOGIN_WAIT = 15
 SCROLL_WAIT = 2
 APPLY_WAIT = 2
