@@ -38,6 +38,12 @@ driver.find_element(By.XPATH, '//*[@id="base-sign-in-modal"]//button[@type="subm
 time.sleep(LOGIN_WAIT)
 
 # === STEP 3: LOCATE JOB LIST CONTAINER ===
+# The line `job_list = driver.find_element(By.XPATH, '//*[@id="main"]/div/div[2]/div[1]/div/ul')` is
+# locating the element on the webpage that contains the list of job postings.
+# This line of code is using Selenium to locate an element on the webpage that contains a list of job
+# postings. The `driver.find_element` method is searching for an HTML element based on the provided
+# XPath expression `'//*[@id="main"]/div/div[2]/div[1]/div/ul'`. Once found, this element is stored in
+# the variable `job_list` for further processing.
 job_list = driver.find_element(By.XPATH, '//*[@id="main"]/div/div[2]/div[1]/div/ul')
 jobs = job_list.find_elements(By.TAG_NAME, "li")
 
